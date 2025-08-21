@@ -1,0 +1,20 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  gameweb.api:
+    build:
+      context: "/Users/alex/Git/GameWeb"
+      dockerfile: "GameWeb.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/GameWeb.API.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "gameweb.api:dev"
+    ports: []
+    volumes:
+    - "/Users/alex/Git/GameWeb/GameWeb.API:/app:rw"
+    - "/Users/alex/Git/GameWeb:/src:rw"
+    - "/Users/alex/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
